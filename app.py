@@ -36,6 +36,17 @@ def create_model(table_name, columns):
 def home():
     return 'Hello, World!'
 
+from flask import jsonify
+
+@app.route('/recipes', methods=['GET'])
+def get_recipes():
+    # レシピのタイトルを取得する
+    recipes = B_recipes.query.all()
+    recipe_titles = [{'id': recipe.id, 'title': recipe.title} for recipe in recipes]
+    
+    # JSON形式で結果を返す
+    return jsonify(recipe_titles)
+
 # テーブル名を基にモデルを生成
 for table_name, columns in tables.items():
     model = create_model(table_name, columns)

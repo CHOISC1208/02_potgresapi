@@ -31,6 +31,11 @@ def create_model(table_name, columns):
         attrs[column_name] = db.Column(column_type)
     return type(table_name.capitalize(), (db.Model,), attrs)
 
+# 新しいルート定義を追加
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
 # テーブル名を基にモデルを生成
 for table_name, columns in tables.items():
     model = create_model(table_name, columns)

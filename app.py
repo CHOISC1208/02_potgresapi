@@ -1,12 +1,14 @@
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate  # Flask-Migrateをインポート
+from flask_migrate import Migrate
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'your_database_uri'
+# 環境変数からデータベースのURLを取得して設定
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///default.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)  # Flask-Migrateをセットアップ
+migrate = Migrate(app, db)
 
 # テーブル名とフィールド名を辞書で定義
 tables = {

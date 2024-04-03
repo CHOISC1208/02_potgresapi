@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 
 app = Flask(__name__)
 
-# HerokuからのDATABASE_URLを取得し、"postgres://" を "postgresql://" に置換する
+# 環境変数からDATABASE_URLを取得し、"postgres://"を"postgresql://"に置換する
 database_uri = os.getenv('DATABASE_URL').replace('postgres://', 'postgresql://', 1)
 app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

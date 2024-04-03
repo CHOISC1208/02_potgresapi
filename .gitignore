@@ -1,0 +1,30 @@
+# システムファイル
+.DS_Store
+.Trash
+
+# 個人設定ファイル
+.CFUserTextEncoding
+.gitconfig
+.lesshst
+.local
+.netrc
+.pgadmin
+.viminfo
+.vscode
+.zprofile
+.zsh_history
+.zsh_sessions
+.zshrc
+.zshrc.save
+
+# その他のディレクトリ
+Applications
+Desktop
+Downloads
+Library
+Movies
+Music
+Pictures
+Public
+TEST
+env

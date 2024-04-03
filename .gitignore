@@ -2,7 +2,8 @@
 .DS_Store
 .Trash
 
-# 個人設定ファイル
+# 個人設定ファイルです
+
 .CFUserTextEncoding
 .gitconfig
 .lesshst
